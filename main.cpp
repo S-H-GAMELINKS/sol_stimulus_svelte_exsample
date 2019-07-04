@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <array>
 
 const std::string load_static(const std::string& path) {
 
@@ -20,13 +21,16 @@ int main() {
 
     httplib::Server svr;
 
+    const std::array<std::string, 4> routes = { "/", "/about", "/contact", "/greet" };
+
     const std::string html = load_static("static/index.html"); 
 
     const std::string js = load_static("static/index.js"); 
 
-    svr.Get("/", [&](const httplib::Request& req, httplib::Response& res){
-        res.set_content(html, "text/html");
-    });
+    for(auto&& r : routes) 
+        svr.Get(r.c_str(), [&](const httplib::Request& req, httplib::Response& res){
+            res.set_content(html, "text/html");
+        });
 
     svr.Get("/index.js", [&](const httplib::Request& req, httplib::Response& res){
         res.set_content(js, "text/javascript");
