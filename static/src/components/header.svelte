@@ -1,7 +1,9 @@
 <script>
-    let word = "Hello World!"
+    import { Link } from "svelte-routing"
 </script>
 
-<div data-controller="hello">
-    <h1>{ word }</h1>
-</div>
+<nav>
+    <Link to="/">Index</Link>
+    <Link to="about">About</Link>
+    <Link to="contact">Contact</Link>
+</nav>
