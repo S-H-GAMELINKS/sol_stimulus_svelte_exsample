@@ -1,7 +1,3 @@
-<script>
-    let word = "Hello World!"
-</script>
-
-<div data-controller="hello">
-    <h1>{ word }</h1>
+<div data-controller="greet">
+    <button data-action="click->greet.greet">Greet!</button>
 </div>
