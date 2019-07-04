@@ -1,3 +1,3 @@
 <div data-controller="greet">
-    <button data-action="click->greet.greet">Greet!</button>
+    <button data-action="click->greet#greet">Greet!</button>
 </div>
