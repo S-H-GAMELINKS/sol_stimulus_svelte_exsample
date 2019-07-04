@@ -3,6 +3,7 @@
     import index from "./routes/index.svelte"
     import about from "./routes/about.svelte"
     import contact from "./routes/contact.svelte"
+    import greet from "./routes/greet.svelte"
     import Header from "./components/header.svelte"
     export let url = ""
 </script>
@@ -13,6 +14,7 @@
     <Route path="/" component="{index}" />
     <Route path="/about" component="{about}" />
     <Route path="/contact" component="{contact}" />
+    <Route path="/greet" component="{greet}" />
     <Route path="/"><index /></Route>
   </div>
 </Router>
